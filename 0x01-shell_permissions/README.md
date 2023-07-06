@@ -8,3 +8,4 @@
 - execute permission to the owner of file hello
 - a script that adds execute permission to the owner and the group owner, and read permission to other users, to the file hello
 - a script that adds execution permission to the owne,group owner and other users
+- a script that sets no permission to owner and groups but sets all permisions to users
