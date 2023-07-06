@@ -6,4 +6,5 @@
 -  wrote a script that changes the owner of the file hello to User betty
 - created a script that creates an empty hello file
 - execute permission to the owner of file hello
-- a script that adds execute permission to the owner and the group owner, and read permission to other users, to the file hello.
+- a script that adds execute permission to the owner and the group owner, and read permission to other users, to the file hello
+- a script that adds execution permission to the owne,group owner and other users
