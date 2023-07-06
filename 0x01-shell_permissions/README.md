@@ -5,3 +5,4 @@
 -  a script that prints all the groups the current user is part of
 -  wrote a script that changes the owner of the file hello to User betty
 - created a script that creates an empty hello file
+- execute permission to the owner of file hello
