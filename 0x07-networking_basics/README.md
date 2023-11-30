@@ -1,0 +1,27 @@
+## NETWORKING BASICS
+
+
+### THE OSI MODEL
+- What it is ?
+- How many layers it has?
+- How it is organized?
+
+
+### LAN
+- What is a LAN?
+- Typical usage
+- Typical geographical size
+
+
+### WAN
+- What is a WAN?
+- Typical usage
+- Typical geographical size
+
+### The Internet
+- What is the Internet?
+- What is an IP address?
+- What are the 2 types of IP address?
+- What is localhost?
+- What is a subnet?
+- Why IPv6 was created?
