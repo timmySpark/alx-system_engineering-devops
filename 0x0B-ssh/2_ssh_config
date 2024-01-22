@@ -1,0 +1,7 @@
+# ssh Configuration
+
+Host my_alx_server
+    HostName 18.204.20.176
+    User ubuntu
+    IdentifyFile ~/.ssh/school
+    PasswordAuthentication no
