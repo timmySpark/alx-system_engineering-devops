@@ -1,59 +1,18 @@
 #!/usr/bin/python3
-'''
-    for a given employee ID, returns information about
-    his/her TODO list progress and export data in the JSON format.
-'''
+"""Exports to-do list information of all employees to JSON format."""
 import json
 import requests
 
+if __name__ == "__main__":
+    url = "https://jsonplaceholder.typicode.com/"
+    users = requests.get(url + "users").json()
 
-def get_all_users():
-    '''gets all employees'''
-    response = requests.get('https://jsonplaceholder.typicode.com/users')
-    users = []
-    data = response.json()
-    for user in data:
-        users.append(user['id'])
-    return users
-
-
-def get_username(user_id):
-    '''Gets username of employee with user_id'''
-    user_url = f'https://jsonplaceholder.typicode.com/users/{user_id}'
-    response = requests.get(user_url)
-    if response.status_code == 200:
-        data = response.json()
-        return data.get('name')
-
-
-def get_todos(user_id):
-    '''Retrieves todos of employee with user_id'''
-    todo_url = f'https://jsonplaceholder.typicode.com/users/{user_id}/todos'
-    response = requests.get(todo_url)
-    if response.status_code == 200:
-        data = response.json()
-        return data
-
-
-def to_json(users):
-    '''export data in the JSON format.'''
-    file_name = 'todo_all_employees.json'
-    result = {}
-    for user_id in users:
-        username = get_username(user_id)
-        todos = get_todos(user_id)
-        tasks = []
-        for todo in todos:
-            status = str(todo.get("completed"))
-            title = str(todo.get("title"))
-            data = {"username": username, "task": title,
-                    "completed": status}
-            tasks.append(data)
-        result[f"{user_id}"] = tasks
-    with open(file_name, 'w', encoding='utf-8') as json_file:
-        json.dump(result, json_file)
-
-
-if __name__ == '__main__':
-    users = get_all_users()
-    to_json(users)
+    with open("todo_all_employees.json", "w") as jsonfile:
+        json.dump({
+            u.get("id"): [{
+                "task": t.get("title"),
+                "completed": t.get("completed"),
+                "username": u.get("username")
+            } for t in requests.get(url + "todos",
+                                    params={"userId": u.get("id")}).json()]
+            for u in users}, jsonfile)
