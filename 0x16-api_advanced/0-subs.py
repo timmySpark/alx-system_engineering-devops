@@ -2,9 +2,12 @@
 ''' Module Containing Reddit API and queries'''
 import requests
 
+
 def number_of_subscribers(subreddit):
-    ''' Queries Subreddit Api, returns the number of subscribers (not active users, total subscribers)
-    for a given subreddit, if subreddit is invalid,function should return Zero(0)
+    ''' Queries Subreddit Api, returns the number of subscribers
+            (not active users, total subscribers)
+            for a given subreddit, if subreddit is invalid,
+            function should return Zero(0)
     '''
 
     url = f"https://www.reddit.com/r/{subreddit}/about.json"
