@@ -31,3 +31,4 @@ While postmortem format can vary, stick to this one so that you can get properly
 
 ## Postmortem incident of Choice
 - Email Verification Service Outage
+-  Blog link :-  [Postmortem Blog](https://medium.com/@timmyspark4/postmortem-email-verification-service-outage-1952d7c04e57)
